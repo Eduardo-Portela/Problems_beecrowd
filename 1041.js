@@ -11,9 +11,9 @@ const [a , b] = values
 if(a == 0 && b == 0){
     console.log("Origem");   
 }else if(a == 0){               
-    console.log("Eiao b");   
+    console.log("Eixo Y");   
 }else if(b == 0){       
-    console.log("Eiao a");
+    console.log("Eixo X");
 }else if(a > 0 && b > 0){  
     console.log("Q1");  
 }else if(a < 0 && b > 0){
