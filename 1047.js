@@ -7,14 +7,34 @@ var lines = input.split('\r\n')
 const values = lines[0].split(' ').map(Number)
 
 const [a, b, c, d] = values
-let res = 0
+let resH = 0
+let resM = 0
 
 if(a > c){
-    res = (24 - a) + c
-    console.log(`O JOGO DUROU ${res} HORA(S)`)
+    resH = (24 - a) + c
 }else if( a === c){
-    console.log("O JOGO DUROU 24 HORA(S)")
+    resH = 24
 }else{
-    res = c - a
-    console.log(`O JOGO DUROU ${res} HORA(S)`)
+    resH = c - a
+}
+
+
+
+if(b > d){
+    resH = resH - 1
+    resM = 60 - (b-d) 
+    if(resH == 24 && (resM > 0)){
+        resH = 0
+    }
+    console.log(`O JOGO DUROU ${resH} HORA(S) E ${resM} MINUTO(S)`)
+}else if( b == d){
+    
+    resM = 0
+    console.log(`O JOGO DUROU ${resH} HORA(S) E ${resM} MINUTO(S)`)
+}else{
+    resM = d - b
+    if(resH == 24 && (resM > 0)){
+        resH = 0
+    }
+    console.log(`O JOGO DUROU ${resH} HORA(S) E ${resM} MINUTO(S)`)
 }
