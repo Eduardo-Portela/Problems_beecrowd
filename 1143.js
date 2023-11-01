@@ -7,8 +7,7 @@ var lines = input.split('\r\n')
 let value = Number(lines.shift())
 let count = 1
 
-for(let i = 1; count <= value; i+=4){
+for(let i = 1; count <= value; i++){
+    console.log(`${i} ${Math.pow(i, 2)} ${Math.pow(i, 3)}`)
     count++
-    console.log(`${i} ${i+1} ${i+2} PUM`)
 }
-
