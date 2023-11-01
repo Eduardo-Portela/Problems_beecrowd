@@ -3,6 +3,7 @@ const currentFile = path.dirname(process.argv[1])
 
 var input = require('fs').readFileSync(currentFile + '\\dev\\stdin', 'utf8')
 var lines = input.split('\r\n')
+
 let line1 = 0
 let line2 = 0
 
