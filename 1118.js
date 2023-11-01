@@ -12,7 +12,7 @@ do
 {
     do
     {
-        m=parseFloat(lines.shift());
+        m=Number(lines.shift());
 
         if(m < 0.0 || m > 10.0)
         {
@@ -23,7 +23,7 @@ do
 
     do
     {
-        n=parseFloat(lines.shift());
+        n=Number(lines.shift());
 
         if(n < 0.0 || n > 10.0)
         {
