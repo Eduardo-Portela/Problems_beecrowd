@@ -30,9 +30,9 @@ let soma = 0
 let media = 0
 for(let i = 0; i < matriz[line].length; i++){
     if(type === "S"){
-        soma += matriz[line][i]
+        soma += matriz[i][line]
     }else{
-        soma += matriz[line][i]
+        soma += matriz[i][line]
     }
 }
 media = soma / 12
