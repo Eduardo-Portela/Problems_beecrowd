@@ -27,33 +27,68 @@ do {
 
 let soma = 0
 let media = 0
-let count = 0
-let total = 0
-let j = 1
 
-for (let i = 0; i < 12; i++)
-{
-    for (let j = 0; j < i; j++)
-    {
-        total += matriz[j][i]; 
+
+for(let i = 0; i < matriz.length; i++){
+
+    for(let j = 0; j < i; j++){
+        // console.log(matriz[j][i])
+            soma += parseFloat(matriz[j][i])
+        
     }
 }
-media = soma / 12
+
+media = soma / 66.0
 
 type === "S" ? console.log(soma.toFixed(1)) : console.log(media.toFixed(1))
 
 
-
-
-// for(let i = 0; i < matriz.length; i++){
-//     while(j < 11){
-//         if(type === "S"){
-//             soma += matriz[i][j]
-//         }else{
-//             soma += matriz[i][j]
-//         }
-//         j++
+// while(j < 11){
+//     j++
+//     if(type === "S"){
+//         soma += matriz[i][j]
+//     }else{
+//         soma += matriz[i][j]
 //     }
-//     count++
-//     j = count
+// }
+// count++
+// j = count
+
+// let x = new Array(12);
+
+// for (let i = 0; i < 12; i++)
+// {
+//     x[i] = new Array(12);
+// }
+
+// let total = 0;
+
+// let tipo = lines.shift();
+
+// for (let i = 0; i < 12; i++)
+// {
+//     for (let j = 0; j < 12; j++)
+//     {
+//         x[i][j] = parseFloat(lines.shift());
+//     }
+// }
+
+// for (let i = 0; i < 12; i++)
+// {
+//     for (let j = 0; j < i; j++)
+//     {
+//         console.log(x[j][i])
+//         total += x[j][i]; 
+//     }
+// }
+
+
+// if (tipo == "S")
+// {
+//     console.log(`${total.toFixed(1)}`);
+// }
+// else if (tipo == "M")
+// {
+//     let result = (total/66.0);
+//     console.log(`${result.toFixed(1)}`);
 // }
