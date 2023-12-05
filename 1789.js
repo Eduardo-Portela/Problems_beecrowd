@@ -10,8 +10,5 @@ for(let i = 0; i < lines.length; i++){
         
         let max = Math.max(...arrValues)
         max < 10 ? console.log(1): max >= 10 && max < 20 ? console.log(2) : console.log(3)
-    }else{
-        let quant = Number(lines[i])
-
     }
 }
