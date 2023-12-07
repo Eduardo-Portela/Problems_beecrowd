@@ -7,18 +7,12 @@ var lines = input.split('\r\n')
 const testCases = lines.shift()
 
 for(let i = 0; i < testCases; i++){
-    const values = lines.shift().split(" ").map(Number)
-    let hour = values.shift()
-    let min = values.shift()
-    let ocurrence = values.shift()
-    if(hour < 10){
-        hour = "0" + hour
-    }
-    if(min < 10){
-        min = "0" + min
-    }
+    let [hour, min, ocurrence] = lines.shift().split(" ").map(Number)
 
-    
-    ocurrence === 1 ? console.log(`${hour}:${min} - A porta abriu!`)
-    : console.log(`${hour}:${min} - A porta fechou!`)
+    const formattedHour = (hour < 10) ? `0${hour}` : hour;
+    const formattedMin = (min < 10) ? `0${min}` : min;
+
+    const status = (ocurrence === 1) ? "A porta abriu!" : "A porta fechou!";
+
+    console.log(`${formattedHour}:${formattedMin} - ${status}`);
 }
