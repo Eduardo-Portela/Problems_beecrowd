@@ -3,29 +3,36 @@ const currentFile = path.dirname(process.argv[1])
 
 var input = require('fs').readFileSync(currentFile + '\\dev\\stdin', 'utf8')
 var lines = input.split('\r\n')
-const cases = lines.length
-const arrNotes = [100, 50, 10, 5, 2]
-let countNote = 0
 
-for(let i =0; i < cases; i++){
-    const values = lines.shift().split(" ").map(Number)
-    let price = values.shift()
-    let pay = values.shift()
-    let result = pay - price
-    if(pay === 0  && price === 0){
-        break
-    }
+let money = [2, 5, 10, 20, 50, 100];
+let cont = 0;
 
-    for(let j = 0; j < arrNotes.length; j++){
-        if(result >= arrNotes[j]){
-            countNote++
-            result -= arrNotes[j]
+while(true){
+  let [a, b] = lines.shift().split(" ");
+  cont = 0;
+  if(a == 0 && b == 0){
+    break;
+  }
+  let troco = parseInt(b) - parseInt(a);
+
+  if(troco > 200 || troco < 1){
+    console.log("impossible");
+  }
+  else{
+    for(let i = 1; i <= money.length;i++){
+      for(let j = 0; j < money.length; j++){
+        if(parseInt(a) + (money[i - 1] + money[j]) == parseInt(b) ){
+          console.log("possible");      
+          cont ++;
+          break;
         }
+      }
+      if(cont != 0){
+        break;
+      }
     }
-    if(countNote == 2 && result ===0){
-        console.log("possible")
-    }else{
-        console.log("impossible")
+    if(cont == 0){
+      console.log("impossible");
     }
-    countNote = 0
+  }
 }
